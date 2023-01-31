@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package helloworld;
+
+service GameManager {
+  rpc GetTrainingMenu (CoachRequest) returns (CoachReply) {}
+}
+
+message CoachRequest {
+  string context = 1;
+}
+
+message CoachReply {
+  repeated uint32 types_atk = 1;
+  repeated uint32 types_def = 2;
+}

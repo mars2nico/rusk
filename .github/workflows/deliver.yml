@@ -1,0 +1,23 @@
+name: Deliver
+
+on:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and save
+      run: |
+        docker build --tag rusk:latest
+        docker save --output rusk.tar rusk
+    - uses: actions/upload-artifact@v3
+      with:
+        name: image archive
+        path: rusk.tar

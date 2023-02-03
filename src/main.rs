@@ -28,7 +28,7 @@ impl GameManager for MyGameManager {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::1]:50051".parse().unwrap();
+    let addr = "[::]:50051".parse().unwrap();
     let gm = MyGameManager::default();
 
     println!("GameManagerServer listening on {}", addr);

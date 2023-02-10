@@ -1,5 +1,5 @@
-
 syntax = "proto3";
+option csharp_namespace = "GrpcShared";
 
 package helloworld;
 
@@ -12,6 +12,7 @@ message CoachRequest {
 }
 
 message CoachReply {
-  repeated uint32 types_atk = 1;
-  repeated uint32 types_def = 2;
+  repeated uint32 types0 = 1;
+  repeated uint32 types1 = 2;
+  repeated uint32 rewsna = 3;
 }

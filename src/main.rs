@@ -13,7 +13,7 @@ use hello_world::{
 #[derive(Default)]
 pub struct MyGameManager {}
 
-static BATSUGUN_CHART: &'static [[u32; 2]] = &[
+static BATSUGUN_CHART: &[[u32; 2]] = &[
     /* Fire     */ [ 2, 4],[ 2, 6],[ 2,12],[ 2,17],
     /* Water    */ [ 3, 2],[ 3, 9],[ 3,13],
     /* Grass    */ [ 4, 3],[ 4, 9],[ 4,13],
@@ -73,7 +73,7 @@ impl GameManager for MyGameManager {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::]:50051".parse().unwrap();
+    let addr = "[::1]:50051".parse().unwrap();
     let gm = MyGameManager::default();
 
     println!("GameManagerServer listening on {}", addr);
